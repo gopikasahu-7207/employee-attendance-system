@@ -4,7 +4,7 @@
 
 **ERP:** RU-26-01700
 
-**Section:** 1L
+**Section:** 1L 
 
 **Project:** PS 32, Employee Attendance System
 
@@ -39,7 +39,8 @@ The program is built to run from the terminal with no setup beyond Python 3. All
 - **Functions:** The code is split into small functions such as `add_employee()`, `mark_attendance()` and `show_report()`. Each one does one job, which makes the program easier to read and test.
 - **File handling:** `open()` reads `attendance.txt` at startup and writes it after every change. The `with` statement makes sure the file closes properly.
 - **String formatting:** f-strings such as `f"{percentage:.2f}"` print the percentage with two decimal places.
-- **The `datetime` module:** Used to check that a date really exists. It is the only module this program imports. The PS lists only dictionaries, lists, conditions and file handling, so check whether your teacher allows it.
+- **The `datetime` module:** Used to check that a date really exists. It is the only module this program imports. 
+
 ## Files
 
 - `employee_attendance.py`: the whole program in one file
@@ -95,7 +96,7 @@ ATT|E101|2026-08-03|A
 ATT|E101|2026-08-04|L
 ```
 
-The first line of each employee starts with `EMP` and holds the ID and name. Every record below it starts with `ATT` and holds the ID, date and status. Please don't edit this file by hand. If it gets messed up, delete it and start again.
+The first line of each employee starts with `EMP` and holds the ID and name. Every record below it starts with `ATT` and holds the ID, date and status. Please don't edit this file by hand,because a wrong line can stop the data from loading correctly. If it gets messed up, delete it and start again.
 
 ## The Percentage
 
@@ -116,4 +117,6 @@ I tested the program in this order, on a fresh `attendance.txt`:
 
 ## Known Limits
 
-- Weekends and holidays are not checked. Any valid
+- Weekends and holidays are not checked. Any valid calendar date is accepted.
+- A name containing `|` would break the data file, because `|` is used as a separator.
+- Records cannot be changed or deleted once saved.

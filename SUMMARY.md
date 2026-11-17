@@ -6,7 +6,7 @@ The PS asks for a console application that adds employees, marks their daily att
 
 The main requirements are:
 
-- Written in Python 3, as one `.py` file('employee_attendance.py), run from the console.
+- Written in Python 3, as one `.py` file, run from the console.
 - Employee IDs start from E101.
 - Status codes: P (Present), A (Absent), L (Leave). Dates use `YYYY-MM-DD`.
 - Attendance % = Present days ÷ marked days × 100.
@@ -124,6 +124,7 @@ The main lesson from this project was how data moves between a file and memory. 
 ## 5. Challenges Faced
 
 - **Output differences from the PS.** Small differences in spacing and punctuation caused mismatches with the expected output. Comparing each print statement with the PS line by line fixed them.
+- **Old data in the file.** The report kept showing wrong counts because an old-format `attendance.txt` from an earlier version was still on disk. Deleting the file and running the tests from a clean start fixed it. The lesson was to check the saved file when the output looks wrong.
 - **Duplicate checks.** The duplicate check had to compare against the saved records, not just the current input, so repeated dates across sessions are also caught.
 - **Pipe characters in names.** A name containing `|` would break the file format. I noted it as a limitation rather than adding extra checks, since the PS does not ask for them.
 - **Date validation.** Checking dates by hand is error-prone, so `datetime` was used for correctness. This is the one module the program imports, and it can be replaced with manual checks if the course restricts imports.
